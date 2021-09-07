@@ -1,6 +1,6 @@
-# minimap.py
+# timeline.py
 #
-# Copyright 2018-2021 Romain F. T.
+# Brais Fontan Costas
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -52,16 +52,7 @@ class TimelineManager(Gtk.Popover):
 			tooltip_text=self.label, \
 			)
 
-		self._label_widget = Gtk.Label(use_underline=True, label=self.mnemolabel)
-		if self.window.gsettings.get_boolean('big-icons'):
-			size = Gtk.IconSize.LARGE_TOOLBAR
-		else:
-			size = Gtk.IconSize.SMALL_TOOLBAR
-		image = Gtk.Image().new_from_icon_name(self.icon_name, size)
-		box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
-		box.add(image)
-		box.add(self._label_widget)
-		self.row.add(box)
+
 		self.row.show_all()
 
 		return self.row
